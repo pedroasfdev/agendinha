@@ -1,0 +1,504 @@
+@layer components {
+  .booking-layout {
+    @apply flex min-h-dvh flex-col bg-paper;
+  }
+  .booking-topbar,
+  .booking-progress {
+    @apply hidden;
+  }
+  .booking-page-content {
+    @apply mx-auto w-full max-w-[1040px] flex-1 px-5 pt-6 pb-8;
+  }
+  .booking-page-heading {
+    @apply mb-5 flex items-center gap-3;
+  }
+  .booking-page-heading h1 {
+    @apply text-[23px] tracking-[-0.5px];
+  }
+  .booking-page-heading p {
+    @apply mt-1 text-[12px] text-muted;
+  }
+  .booking-layout-footer {
+    @apply flex items-center justify-center gap-1.5 px-4 pb-5 text-center text-[10px] text-muted;
+  }
+  .booking-layout-footer > svg {
+    @apply text-coral;
+  }
+  .booking-side-note {
+    @apply hidden;
+  }
+  .time-professional-card {
+    @apply mb-4 flex items-center gap-2.5 rounded-2xl border border-line bg-white px-3 py-3 shadow-card;
+  }
+  .time-professional-card > img {
+    @apply size-11 rounded-full object-cover;
+  }
+  .time-professional-card > div {
+    @apply flex-1;
+  }
+  .time-professional-card strong {
+    @apply text-[13px] font-semibold;
+  }
+  .time-professional-card p {
+    @apply mt-0.5 text-[11px] text-muted;
+  }
+  .time-professional-card > svg {
+    @apply text-teal;
+  }
+  .time-calendar-heading {
+    @apply mb-3 text-[15px];
+  }
+  .time-calendar-heading .icon-button {
+    @apply size-7 bg-transparent text-muted;
+  }
+  .booking-date-picker {
+    @apply gap-2;
+  }
+  .booking-date-picker > button {
+    @apply h-[62px] gap-1.5 border-transparent py-3;
+  }
+  .booking-date-picker > button > span:first-child {
+    @apply text-[9px];
+  }
+  .booking-date-picker > button:disabled {
+    @apply bg-line/40 text-muted/40;
+  }
+  .available-heading {
+    @apply mt-6 mb-4;
+  }
+  .available-heading h2 {
+    @apply text-[15px];
+  }
+  .available-heading > span {
+    @apply text-[10px] font-medium text-teal;
+  }
+  .time-period {
+    @apply mb-4;
+  }
+  .time-period > p {
+    @apply mb-2 text-[10px] font-medium text-muted;
+  }
+  .booking-time-grid {
+    @apply grid grid-cols-3 gap-2.5;
+  }
+  .booking-time-grid > button {
+    @apply h-11 rounded-xl border border-line bg-white text-[12px] font-medium hover:border-teal/50;
+  }
+  .booking-time-grid > button.selected {
+    @apply border-teal bg-teal text-white;
+  }
+  .booking-time-grid > button:disabled {
+    @apply cursor-not-allowed border-[#eeece7] bg-[#f1efe9] text-muted/50;
+  }
+  .selected-time-note {
+    @apply my-4 flex items-center gap-2 rounded-xl bg-mint px-3 py-3 text-[12px] font-medium text-teal;
+  }
+  .choose-time-note {
+    @apply my-4 text-center text-[11px] text-muted;
+  }
+  .time-page .demo-form-note {
+    @apply mt-3;
+  }
+  .checkout-page .section-heading h2 {
+    @apply text-[15px];
+  }
+  .checkout-summary-card {
+    @apply rounded-2xl border border-line bg-white p-3.5 shadow-card;
+  }
+  .checkout-service {
+    @apply flex items-center gap-2.5 border-b border-line pb-3;
+  }
+  .checkout-service > img {
+    @apply size-10 shrink-0 rounded-full object-cover;
+  }
+  .checkout-service > div {
+    @apply min-w-0 flex-1;
+  }
+  .checkout-service h3 {
+    @apply text-[14px];
+  }
+  .checkout-service p {
+    @apply mt-1 text-[11px] leading-snug text-muted;
+  }
+  .checkout-service > strong {
+    @apply shrink-0 text-[14px] font-semibold text-teal;
+  }
+  .checkout-details {
+    @apply flex flex-col gap-2 pt-3;
+  }
+  .checkout-details > p {
+    @apply flex items-start gap-2 text-[12px] leading-relaxed;
+  }
+  .checkout-details svg {
+    @apply mt-0.5 text-teal;
+  }
+  .checkout-details > p:first-child {
+    @apply capitalize;
+  }
+  .checkout-payment-section {
+    @apply mt-6;
+  }
+  .checkout-method-card {
+    @apply mb-4 flex w-full items-center gap-3 rounded-2xl border border-line bg-white p-3 text-left shadow-card hover:border-teal/30;
+  }
+  .checkout-method-card .heading-icon {
+    @apply size-9;
+  }
+  .checkout-method-card > span:nth-child(2) {
+    @apply flex min-w-0 flex-1 flex-col gap-1;
+  }
+  .checkout-method-card strong {
+    @apply text-[12px] font-medium;
+  }
+  .checkout-method-card small {
+    @apply text-[10px] text-muted;
+  }
+  .method-selected {
+    @apply flex size-[21px] shrink-0 items-center justify-center rounded-full bg-teal text-white;
+  }
+  .coupon-field {
+    @apply flex h-12 items-center gap-2.5 rounded-xl border border-line bg-white px-3 text-muted;
+  }
+  .coupon-field input {
+    @apply h-full min-w-0 flex-1 bg-transparent text-[12px] text-ink outline-none placeholder:text-muted;
+  }
+  .coupon-field input:focus-visible {
+    @apply outline-none;
+  }
+  .coupon-field:focus-within {
+    @apply border-teal/40 ring-2 ring-teal/5;
+  }
+  .coupon-field button {
+    @apply -mr-1 flex size-9 items-center justify-center rounded-lg hover:bg-mint;
+  }
+  .coupon-status {
+    @apply mt-2 text-[11px] leading-relaxed text-[#bf4e45];
+  }
+  .coupon-applied {
+    @apply flex flex-wrap justify-between gap-2 text-teal;
+  }
+  .coupon-applied button {
+    @apply text-[10px] underline;
+  }
+  .checkout-total {
+    @apply my-5 flex flex-col gap-3 rounded-2xl border border-[#e6e3dc] bg-[#eeece5] p-4 shadow-card;
+  }
+  .checkout-total > div {
+    @apply flex items-center justify-between gap-3;
+  }
+  .checkout-total > div > span {
+    @apply text-[12px] text-muted;
+  }
+  .checkout-total > div > strong {
+    @apply text-[12px] font-semibold;
+  }
+  .checkout-total > .discount-line {
+    @apply text-teal;
+  }
+  .checkout-total > .checkout-grand-total {
+    @apply mt-0.5 border-t border-[#dedbd2] pt-3;
+  }
+  .checkout-total > .checkout-grand-total > span {
+    @apply text-[14px] font-semibold text-ink;
+  }
+  .checkout-total > .checkout-grand-total > strong {
+    @apply text-[22px] font-bold text-teal;
+  }
+  .checkout-security {
+    @apply mt-3 flex items-center justify-center gap-1 text-[10px] text-muted;
+  }
+  .checkout-security > svg {
+    @apply text-[#329268];
+  }
+  .checkout-page .demo-form-note {
+    @apply mt-2;
+  }
+  .client-payment-options {
+    @apply flex flex-col gap-2;
+  }
+  .client-payment-options > button {
+    @apply flex items-center gap-3 rounded-xl border border-line bg-white p-3 text-left hover:border-teal/30;
+  }
+  .client-payment-options > button > span:nth-child(2) {
+    @apply flex min-w-0 flex-1 flex-col gap-1;
+  }
+  .client-payment-options strong {
+    @apply text-[13px] font-medium;
+  }
+  .client-payment-options small {
+    @apply text-[10px] leading-relaxed text-muted;
+  }
+  .client-payment-options > button > svg {
+    @apply text-teal;
+  }
+  .client-payment-options + .demo-form-note {
+    @apply mt-4;
+  }
+  .confirmation-layout {
+    @apply bg-white;
+  }
+  .confirmation-page {
+    @apply mx-auto max-w-[460px];
+  }
+  .confirmation-intro {
+    @apply flex flex-col items-center pt-5 text-center;
+  }
+  .confirmation-check {
+    @apply mb-6 flex size-[84px] items-center justify-center rounded-full border-[11px] border-[#e0f3e8] bg-[#298a62] text-white;
+  }
+  .confirmation-intro h1 {
+    @apply text-[25px] leading-tight tracking-[-0.7px];
+  }
+  .confirmation-intro > p {
+    @apply mt-3 text-[14px] leading-relaxed text-muted;
+  }
+  .confirmation-number {
+    @apply mt-4 rounded-full bg-[#fde8df] px-3 py-1.5 text-[10px] font-medium text-[#ec7554];
+  }
+  .confirmation-details-card {
+    @apply mt-9 rounded-2xl border border-line bg-white p-4 shadow-card;
+  }
+  .confirmation-service {
+    @apply mb-4 flex items-start justify-between gap-2 border-b border-line pb-3;
+  }
+  .confirmation-service h2 {
+    @apply text-[15px];
+  }
+  .confirmation-service p {
+    @apply mt-1 text-[12px] text-muted;
+  }
+  .confirmation-service > span {
+    @apply shrink-0 pt-1 text-[9px] font-semibold text-[#2d8b64];
+  }
+  .confirmation-detail-row {
+    @apply mt-3 flex items-center gap-3;
+  }
+  .confirmation-detail-row .heading-icon {
+    @apply size-9 rounded-[10px];
+  }
+  .confirmation-detail-row > div {
+    @apply flex min-w-0 flex-1 flex-col gap-0.5;
+  }
+  .confirmation-detail-row > div > span {
+    @apply text-[10px] text-muted;
+  }
+  .confirmation-detail-row strong {
+    @apply text-[12px] font-medium leading-relaxed;
+  }
+  .confirmation-detail-row:first-of-type strong {
+    @apply capitalize;
+  }
+  .confirmation-actions {
+    @apply mt-10 flex flex-col items-center gap-3;
+  }
+  .confirmation-actions > .text-link {
+    @apply mt-1;
+  }
+  .confirmation-page > .demo-form-note {
+    @apply mt-5;
+  }
+}
+
+@media (max-width: 359px) {
+  .booking-date-picker {
+    @apply gap-1;
+  }
+  .booking-date-picker > button > span:first-child {
+    @apply text-[8px];
+  }
+  .booking-page-heading h1 {
+    @apply text-[21px];
+  }
+  .confirmation-intro h1 {
+    @apply text-[22px];
+  }
+  .confirmation-service > span {
+    @apply text-[8px];
+  }
+}
+
+@media (min-width: 640px) {
+  .booking-page-content {
+    @apply max-w-[540px] px-8 pt-8;
+  }
+  .booking-date-picker > button {
+    @apply h-[68px];
+  }
+  .booking-time-grid > button {
+    @apply h-12;
+  }
+}
+
+@media (min-width: 1024px) {
+  .booking-topbar {
+    @apply flex h-[86px] items-center justify-between border-b border-line px-12;
+  }
+  .booking-topbar .brand {
+    @apply text-[25px];
+  }
+  .booking-topbar .brand-symbol {
+    @apply size-9;
+  }
+  .booking-progress {
+    @apply mx-auto my-8 flex w-full max-w-[680px] items-center justify-between px-5;
+  }
+  .booking-progress > div {
+    @apply relative flex flex-1 items-center gap-2 text-muted;
+  }
+  .booking-progress > div:last-child {
+    @apply flex-none;
+  }
+  .booking-progress > div > span {
+    @apply flex size-7 shrink-0 items-center justify-center rounded-full border border-line bg-white text-[10px];
+  }
+  .booking-progress > div > p {
+    @apply text-[11px];
+  }
+  .booking-progress > div > i {
+    @apply mx-4 h-px flex-1 bg-line;
+  }
+  .booking-progress > .current {
+    @apply font-medium text-teal;
+  }
+  .booking-progress > .current > span {
+    @apply border-teal bg-teal text-white;
+  }
+  .booking-page-content {
+    @apply max-w-[1040px] px-10 pt-1 pb-12;
+  }
+  .booking-page-heading {
+    @apply mb-7;
+  }
+  .booking-page-heading h1 {
+    @apply text-[31px];
+  }
+  .booking-page-heading p {
+    @apply text-[13px];
+  }
+  .booking-page-heading .icon-button {
+    @apply size-11 border border-line;
+  }
+  .booking-two-columns {
+    @apply grid grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start gap-14;
+  }
+  .booking-main-panel {
+    @apply min-w-0;
+  }
+  .time-professional-card {
+    @apply px-4 py-4;
+  }
+  .time-professional-card > img {
+    @apply size-12;
+  }
+  .time-professional-card strong {
+    @apply text-[14px];
+  }
+  .time-professional-card p {
+    @apply text-[12px];
+  }
+  .booking-side-note {
+    @apply sticky top-8 block overflow-hidden rounded-[24px] border border-[#e0e7da] bg-[#edf1e7];
+  }
+  .booking-side-note > img {
+    @apply h-[220px] w-full object-cover;
+  }
+  .booking-side-note > div {
+    @apply relative p-7;
+  }
+  .booking-side-note > div > span:first-child {
+    @apply text-[8px] font-medium tracking-[1.5px] text-muted;
+  }
+  .booking-side-note h2 {
+    @apply mt-3 text-[27px] leading-tight tracking-[-0.9px] text-teal;
+  }
+  .booking-side-note p {
+    @apply mt-4 text-[12px] leading-relaxed text-muted;
+  }
+  .booking-side-note > div > div {
+    @apply mt-5 flex items-center gap-2 text-[11px] text-muted;
+  }
+  .booking-side-note > div > div + div {
+    @apply mt-3;
+  }
+  .booking-side-note > div > div > svg {
+    @apply text-teal;
+  }
+  .booking-side-sparkle {
+    @apply absolute right-5 bottom-4 text-[45px] text-teal/25;
+  }
+  .available-heading h2 {
+    @apply text-[17px];
+  }
+  .time-period > p {
+    @apply text-[11px];
+  }
+  .booking-time-grid > button {
+    @apply h-12 text-[13px];
+  }
+  .selected-time-note {
+    @apply my-5 text-[13px];
+  }
+  .booking-layout-footer {
+    @apply pb-6;
+  }
+  .checkout-page .section-heading h2 {
+    @apply text-[17px];
+  }
+  .checkout-summary-card {
+    @apply p-5;
+  }
+  .checkout-service {
+    @apply gap-3;
+  }
+  .checkout-service h3 {
+    @apply text-[16px];
+  }
+  .checkout-service p {
+    @apply text-[12px];
+  }
+  .checkout-service > strong {
+    @apply text-[16px];
+  }
+  .checkout-details {
+    @apply gap-2.5;
+  }
+  .checkout-details > p {
+    @apply text-[12px];
+  }
+  .checkout-method-card {
+    @apply p-4;
+  }
+  .checkout-method-card strong {
+    @apply text-[13px];
+  }
+  .checkout-total {
+    @apply p-5;
+  }
+  .checkout-total > .checkout-grand-total > strong {
+    @apply text-[25px];
+  }
+  .confirmation-page {
+    @apply max-w-[440px];
+  }
+  .confirmation-intro {
+    @apply pt-0;
+  }
+  .confirmation-intro h1 {
+    @apply text-[30px];
+  }
+  .confirmation-check {
+    @apply size-[94px];
+  }
+  .confirmation-details-card {
+    @apply mt-7 p-5;
+  }
+  .confirmation-detail-row strong {
+    @apply text-[13px];
+  }
+  .confirmation-actions {
+    @apply mt-7;
+  }
+  .confirmation-service h2 {
+    @apply text-[16px];
+  }
+}

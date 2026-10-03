@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@import './styles/base.css';
+@import './features/provider/provider.css';
+@import './features/booking/booking-flow.css';
